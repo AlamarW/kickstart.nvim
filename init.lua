@@ -1002,6 +1002,42 @@ require('lazy').setup({
       { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
   },
+  {
+    'NeogitOrg/neogit',
+    lazy = true,
+    dependencies = {
+      'nvim-lua/plenary.nvim', -- required
+      'sindrets/diffview.nvim', -- optional - Diff integration
+
+      'nvim-telescope/telescope.nvim', -- optional
+    },
+    cmd = 'Neogit',
+    keys = {
+      { '<leader>gg', '<cmd>Neogit<cr>', desc = 'Show Neogit UI' },
+    },
+  },
+  {
+    'huggingface/llm.nvim',
+    opts = {
+      backend = 'openai',
+      model = 'qwen2.5-coder-32b',
+      url = 'http://172.22.80.1:1238', -- confirm this
+      tokens_to_clear = { '<|endoftext|>' },
+      fim = {
+        enabled = true,
+        prefix = '<|fim_prefix|>',
+        middle = '<|fim_middle|>',
+        suffix = '<|fim_suffix|>',
+      },
+      request_body = {
+        temperature = 0.2,
+        top_p = 0.95,
+      },
+      context_window = 8192,
+      accept_keymap = '<Tab>',
+      dismiss_keymap = '<S-Tab>',
+    },
+  },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
