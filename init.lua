@@ -1020,7 +1020,7 @@ require('lazy').setup({
     'huggingface/llm.nvim',
     opts = {
       backend = 'openai',
-      model = 'qwen2.5-coder-32b',
+      model = 'qwen2.5-coder-14b',
       url = 'http://172.22.80.1:1238', -- confirm this
       tokens_to_clear = { '<|endoftext|>' },
       fim = {
