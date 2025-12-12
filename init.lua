@@ -1034,7 +1034,7 @@ require('lazy').setup({
         top_p = 0.95,
       },
       context_window = 8192,
-      accept_keymap = '<Tab>',
+      accept_keymap = '<M-Tab>',
       dismiss_keymap = '<S-Tab>',
     },
   },
